@@ -1,0 +1,25 @@
+{
+  "name": "saucedemo",
+  "version": "1.0.0",
+  "description": "Test Suite para www.saucedemo.com",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackDanielson/saucedemo.git"
+  },
+  "author": "Federico A. Danielo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JackDanielson/saucedemo/issues"
+  },
+  "homepage": "https://github.com/JackDanielson/saucedemo#readme",
+  "devDependencies": {
+    "cypress": "^15.8.1"
+  },
+  "dependencies": {
+    "chai": "^6.2.2"
+  }
+}
