@@ -6,7 +6,7 @@ describe('Testeo de Login', () =>{
 
 
     beforeEach(() =>{
-        cy.visit('')
+        cy.visit('');
     });
 
     it('TC-LOG001 - Login - Credenciales Correctas  - Inicio Correcto',()=>{
@@ -21,6 +21,20 @@ describe('Testeo de Login', () =>{
         })
 
     });
+
+it('TC-LOG001 - Login - Credenciales Correctas  - Inicio Correcto - Fallado a Proposito',()=>{
+        cy.fixture('dataLoginPageNOK').as('data');
+        cy.get('@data').then((data) => {
+            const user = data.username;
+            const pwd = data.password;
+            LoginPage.getTxtUsername().type(user);
+            LoginPage.getTxtPassword().type(pwd);
+            LoginPage.getBtnLogin().click({force:true});
+            InventoryPage.getBtnCheckoutCart().should('exist');
+        })
+
+    });
+
 
     it('TC-LOG005 - Login - Credenciales Incorrectas  - Sin Password',()=>{
         cy.fixture('dataLoginPageNOK').as('data');
